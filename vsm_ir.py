@@ -1,13 +1,10 @@
-from audioop import avg
 import json
 import os
 import sys
 import string
 import math
-import numpy as np
 import nltk
 from nltk.corpus import stopwords
-from sympy import re
 nltk.download("stopwords")
 from nltk.stem import PorterStemmer
 ps = PorterStemmer()
