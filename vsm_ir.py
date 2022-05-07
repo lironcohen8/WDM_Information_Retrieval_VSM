@@ -2,6 +2,7 @@ import json
 import sys
 import string
 import math
+import numpy as np
 import nltk
 from nltk.corpus import stopwords
 nltk.download("stopwords")
@@ -22,17 +23,17 @@ def create_index(dir_path):
         records = root.findall("RECORD")
         for record in records:
             max_freq = 0
-            words_cntr = 0
+            words_cnt = 0
             record_num = record.find("RECORDNUM").text.strip()
-            records_dict[record_num] = {}
+            records_dict[record_num] = {"words_cnt" : 0, "words" : {}}
             record_words = get_words_from_record(record)
             for word in record_words:
                 clean_word, validationValue = update_word_dict(word, record_num)
-                words_cntr += validationValue
+                words_cnt += validationValue
                 if validationValue > 0:
                     max_freq = max(max_freq, words_dict[clean_word]["docs"][record_num])
             calc_tf_values(record_num, max_freq)
-            records_dict[record_num] = words_cntr
+            records_dict[record_num]["word_cnt"] = words_cnt
             print(record_num)
     calc_idf_values()
     save_words_dict_to_json()
@@ -72,8 +73,9 @@ def calc_idf_values():
         words_dict[word]["idf"] = math.log2(D / df) 
 
 def save_words_dict_to_json():
+    index_dicts = {"words_dict" : words_dict, "records_dict" : records_dict}
     with open(JSON_FILE_NAME, 'w') as f:
-        json.dump(words_dict, f, indent=4)
+        json.dump(index_dicts, f, indent=4)
 
 if __name__ == '__main__':
     if sys.argv[1] == "create_index":
