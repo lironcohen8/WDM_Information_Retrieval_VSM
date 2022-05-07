@@ -1,3 +1,4 @@
+import json
 import sys
 import string
 import math
@@ -9,6 +10,7 @@ ps = PorterStemmer()
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+JSON_FILE_NAME = "vsm_inverted_index.json"
 records_dict = {}
 words_dict = {}
 
@@ -33,7 +35,7 @@ def create_index(dir_path):
             records_dict[record_num] = words_cntr
             print(record_num)
     calc_idf_values()
-    pass
+    save_words_dict_to_json()
 
 def get_words_from_record(record):
     title_words = record.find("TITLE").text.strip().split()
@@ -68,6 +70,10 @@ def calc_idf_values():
     for word in words_dict.keys():
         df = len(words_dict[word]["docs"])
         words_dict[word]["idf"] = math.log2(D / df) 
+
+def save_words_dict_to_json():
+    with open(JSON_FILE_NAME, 'w') as f:
+        json.dump(words_dict, f, indent=4)
 
 if __name__ == '__main__':
     if sys.argv[1] == "create_index":
