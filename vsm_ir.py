@@ -155,7 +155,6 @@ def calc_bm25_grades(query_dict):
     sorted_records = sorted(relevant_records.items(), key=lambda x: x[1], reverse=True)
     return sorted_records
         
-
 def calc_BM25_grade_for_record(D, avgdl, N, query_dict, record_num):
     bm25_grade = 0
     common_words = query_dict["words"].keys() & records_dict[record_num]["words"].keys()
@@ -168,7 +167,6 @@ def calc_BM25_grade_for_record(D, avgdl, N, query_dict, record_num):
             right_denom = BM25_K * (1 - BM25_B + (BM25_B * D / avgdl))
             bm25_grade += (nomin / tf + right_denom)
     return bm25_grade
-
 
 def save_query_result_to_txt(sorted_records):
     with open(QUERY_RESULT_FILE_NAME, 'w') as f:
