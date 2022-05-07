@@ -1,3 +1,4 @@
+from audioop import avg
 import json
 import os
 import sys
@@ -15,6 +16,8 @@ from pathlib import Path
 
 JSON_FILE_NAME = "vsm_inverted_index.json"
 QUERY_RESULT_FILE_NAME = "ranked_query_docs.txt"
+BM25_K = 1.5
+BM25_B = 0.75
 records_dict = {}
 words_dict = {}
 
@@ -75,15 +78,12 @@ def calc_weight_values():
     for word in words_dict.keys():
         for record_num in words_dict[word]["docs"].keys():
             idf = words_dict[word]["idf"]
-            words_dict[word]["docs"][record_num] *= idf
             records_dict[record_num]["words"][word] *= idf
 
 def save_index_dict_to_json():
     index_dicts = {"words_dict" : words_dict, "records_dict" : records_dict}
     with open(JSON_FILE_NAME, 'w') as f:
         json.dump(index_dicts, f, indent=4)
-
-
 
 def ask_question(ranking, index_path, query):
     words_dict, records_dict = load_index_dict_from_json(index_path)
@@ -142,6 +142,32 @@ def calc_tfidf_grades(query_dict):
     sorted_records = sorted(relevant_records.items(), key=lambda x: x[1], reverse=True)
     return sorted_records
 
+def calc_bm25_grades(query_dict):
+    D = len(words_dict.keys())
+    avgdl = avg([record["words_cnt"] for record in records_dict.keys()])
+    N = len(records_dict.keys())
+    relevant_records = {}
+
+    for record_num in records_dict.keys():
+        bm25_grade = calc_BM25_grade_for_record(D, avgdl, N, query_dict, record_num)
+        relevant_records[record_num] = bm25_grade
+
+    sorted_records = sorted(relevant_records.items(), key=lambda x: x[1], reverse=True)
+    return sorted_records
+        
+
+def calc_BM25_grade_for_record(D, avgdl, N, query_dict, record_num):
+    bm25_grade = 0
+    common_words = query_dict["words"].keys() & records_dict[record_num]["words"].keys()
+    if len(common_words > 0):
+        for word in common_words:
+            n = len(words_dict[word]["docs"].keys())
+            idf = math.log(1 + ((N - n + 0.5) / (n + 0.5)))
+            tf = words_dict[word]["docs"][record_num]
+            nomin = idf * tf * (BM25_K + 1)
+            right_denom = BM25_K * (1 - BM25_B + (BM25_B * D / avgdl))
+            bm25_grade += (nomin / tf + right_denom)
+    return bm25_grade
 
 
 def save_query_result_to_txt(sorted_records):
