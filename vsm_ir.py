@@ -25,13 +25,15 @@ def create_index(dir_path):
             records_dict[record_num] = {}
             record_words = get_words_from_record(record)
             for word in record_words:
-                clean_word = update_word_dict(word, record_num)
-                max_freq = max(max_freq, words_dict[clean_word]["docs"][record_num])
+                clean_word, validationValue = update_word_dict(word, record_num)
+                words_cntr += validationValue
+                if validationValue > 0:
+                    max_freq = max(max_freq, words_dict[clean_word]["docs"][record_num])
             calc_tf_values(record_num, max_freq)
-            
             records_dict[record_num] = words_cntr
             print(record_num)
     calc_idf_values()
+    pass
 
 def get_words_from_record(record):
     title_words = record.find("TITLE").text.strip().split()
@@ -43,16 +45,17 @@ def get_words_from_record(record):
     return record_words           
 
 def update_word_dict(word, record_num):
+    validationValue = 0
     # stemming, removing pactuations and coverting to lower case
     clean_word = ps.stem(word.translate(str.maketrans('', '', string.punctuation)).lower())  
     if clean_word not in set(stopwords.words('english')):
-        words_cntr += 1
+        validationValue = 1
         if clean_word not in words_dict.keys():
             words_dict[clean_word] = {"docs" : {}, "idf": 0}
         if record_num not in words_dict[clean_word]["docs"].keys():
             words_dict[clean_word]["docs"][record_num] = 0
         words_dict[clean_word]["docs"][record_num] += 1
-    return clean_word
+    return clean_word, validationValue
         
 def calc_tf_values(record_num, max_freq):
     for word in words_dict.keys():
