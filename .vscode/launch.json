@@ -11,10 +11,14 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["query",
-                "bm25",
+            "args": [
+                //"create_index",
+                //"C:\\Users\\user\\OneDrive\\Desktop\\Liron\\Studies\\WDM\\WDM_Information_Retrieval_VSM\\cfc-test"
+                "query",
+                "tfidf",
                 "C:\\Users\\user\\OneDrive\\Desktop\\Liron\\Studies\\WDM\\WDM_Information_Retrieval_VSM\\vsm_inverted_index.json",
-                "What factors are responsible for the appearance of mucoid strains of Pseudomonas aeruginosa in CF patients?"
+                "What is cycsic fibrosis?"
+                //"What factors are responsible for the appearance of mucoid strains of Pseudomonas aeruginosa in CF patients?"
             ]
         }
     ]

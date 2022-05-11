@@ -83,6 +83,8 @@ def save_index_dict_to_json():
         json.dump(index_dicts, f, indent=4)
 
 def ask_question(ranking, index_path, query):
+    global words_dict
+    global records_dict
     words_dict, records_dict = load_index_dict_from_json(index_path)
     query_dict = parse_query(query)
     if ranking == "tfidf":
@@ -127,7 +129,7 @@ def calc_tfidf_grades(query_dict):
 
     for record_num in records_dict.keys():
         common_words = query_dict["words"].keys() & records_dict[record_num]["words"].keys()
-        if len(common_words > 0):
+        if len(common_words) > 0:
             for word in common_words:
                 query_weight = query_dict["words"][word]
                 record_weight = records_dict[record_num]["words"][word]
@@ -168,8 +170,11 @@ def calc_bm25_grade_for_record(D, avgdl, N, query_dict, record_num):
     return bm25_grade
 
 def save_query_result_to_txt(sorted_records):
+    sorted_records_num_list = [record[0] for record in sorted_records]
     with open(QUERY_RESULT_FILE_NAME, 'w') as f:
-        f.write((os.linesep).join(sorted_records))
+        for record_num in sorted_records_num_list:
+            f.write(record_num + "\n")  # TODO change to line separator
+        #f.write((os.linesep).join(sorted_records_num_list))
 
 if __name__ == '__main__':
     if sys.argv[1] == "create_index":
