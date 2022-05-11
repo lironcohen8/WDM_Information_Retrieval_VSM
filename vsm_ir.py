@@ -92,6 +92,7 @@ def ask_question(ranking, index_path, query):
     save_query_result_to_txt(sorted_records)
 
 def parse_query(query):
+    max_freq = 0
     query_dict = {"words_cnt" : 0, "words" : {}}
     query_words = query.strip().split()
     for word in query_words:
@@ -115,8 +116,8 @@ def parse_query(query):
 
 def load_index_dict_from_json(index_path):
     with open(index_path) as f:
-        index_dict = json.load(f, indent=4)
-    return index_dict[words_dict], index_dict[records_dict]
+        index_dict = json.load(f)
+    return index_dict['words_dict'], index_dict['records_dict']
 
 def calc_tfidf_grades(query_dict):
     nomin = 0
@@ -141,12 +142,13 @@ def calc_tfidf_grades(query_dict):
 
 def calc_bm25_grades(query_dict):
     D = len(words_dict.keys())
-    avgdl = avg([record["words_cnt"] for record in records_dict.keys()])
+    lst = [record["words_cnt"] for record in records_dict.keys()]
+    avgdl = sum(lst) / len(lst)
     N = len(records_dict.keys())
     relevant_records = {}
 
     for record_num in records_dict.keys():
-        bm25_grade = calc_BM25_grade_for_record(D, avgdl, N, query_dict, record_num)
+        bm25_grade = calc_bm25_grade_for_record(D, avgdl, N, query_dict, record_num)
         relevant_records[record_num] = bm25_grade
 
     sorted_records = sorted(relevant_records.items(), key=lambda x: x[1], reverse=True)
@@ -167,7 +169,7 @@ def calc_bm25_grade_for_record(D, avgdl, N, query_dict, record_num):
 
 def save_query_result_to_txt(sorted_records):
     with open(QUERY_RESULT_FILE_NAME, 'w') as f:
-        f.write(os.linesep).join(sorted_records)
+        f.write((os.linesep).join(sorted_records))
 
 if __name__ == '__main__':
     if sys.argv[1] == "create_index":
