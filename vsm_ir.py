@@ -144,7 +144,7 @@ def calc_tfidf_grades(query_dict):
 
 def calc_bm25_grades(query_dict):
     D = len(words_dict.keys())
-    lst = [record["words_cnt"] for record in records_dict.keys()]
+    lst = [record["words_cnt"] for record in records_dict.values()]
     avgdl = sum(lst) / len(lst)
     N = len(records_dict.keys())
     relevant_records = {}
@@ -159,7 +159,7 @@ def calc_bm25_grades(query_dict):
 def calc_bm25_grade_for_record(D, avgdl, N, query_dict, record_num):
     bm25_grade = 0
     common_words = query_dict["words"].keys() & records_dict[record_num]["words"].keys()
-    if len(common_words > 0):
+    if len(common_words) > 0:
         for word in common_words:
             n = len(words_dict[word]["docs"].keys())
             idf = math.log(1 + ((N - n + 0.5) / (n + 0.5)))
