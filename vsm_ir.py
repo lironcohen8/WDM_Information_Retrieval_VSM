@@ -40,6 +40,7 @@ def create_index(dir_path):
             calc_tf_values(record_num, max_freq)
             print(record_num)
     calc_idf_values()
+    calc_weight_values()
     save_index_dict_to_json()
 
 def get_words_from_record(record):

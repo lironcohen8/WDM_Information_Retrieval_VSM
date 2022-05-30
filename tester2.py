@@ -30,7 +30,7 @@ def calculate_scores(queries_path, index_path):
         query['text'] = re.sub(' +', ' ', query['text'])
         queries.append(query)
         # run query
-        os.system(f'python vsm_ir.py query bm25 "{index_path}" "{query["text"]}"')
+        os.system(f'python vsm_ir.py query tfidf "{index_path}" "{query["text"]}"')
         results = get_results()
         evaluation = evaluate_results(results, scores_dict)
         combined_cumulative_gain += evaluation['cumulative_gain']
