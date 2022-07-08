@@ -38,7 +38,6 @@ def create_index(dir_path):
                     records_dict[record_num]["words_cnt"] += 1
                     max_freq = max(max_freq, words_dict[clean_word]["docs"][record_num]["word_cnt"])
             calc_tf_values(record_num, max_freq)
-            print(record_num)
     calc_idf_values()
     calc_weight_values()
     save_index_dict_to_json()
@@ -121,7 +120,7 @@ def parse_query(query):
         if clean_word in words_dict.keys():
             df = len(words_dict[clean_word]["docs"])
         else:
-            df = 1  # TODO understand if this is right
+            df = 1
         idf = math.log2(D / df)
 
         # Calculate tf-idf
@@ -203,7 +202,7 @@ def save_query_result_to_txt(sorted_records):
     sorted_records_num_list = [record[0] for record in sorted_records]
     with open(QUERY_RESULT_FILE_NAME, 'w') as f:
         for record_num in sorted_records_num_list:
-            f.write(record_num + "\n")  # TODO change to line separator
+            f.write(record_num + "\n")  # TODO shuld work - check in nova
         #f.write((os.linesep).join(sorted_records_num_list))
 
 if __name__ == '__main__':
