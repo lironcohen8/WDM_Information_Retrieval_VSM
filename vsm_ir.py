@@ -9,7 +9,7 @@ nltk.download("stopwords")
 from nltk.stem import PorterStemmer
 ps = PorterStemmer()
 import xml.etree.ElementTree as ET
-from pathlib import Path
+# from pathlib import Path
 
 JSON_FILE_NAME = "vsm_inverted_index.json"
 QUERY_RESULT_FILE_NAME = "ranked_query_docs.txt"
@@ -20,24 +20,27 @@ records_dict = {}
 words_dict = {}
 
 def create_index(dir_path):
-    files = Path(dir_path).glob('*.xml')
+    files = os.listdir(dir_path)
     for file in files:
-        doc = ET.parse(file)
-        root = doc.getroot()
-        records = root.findall("RECORD")
-        for record in records:
-            max_freq = 0
-            record_num = record.find("RECORDNUM").text.strip().lstrip('0')
-            records_dict[record_num] = {"words_cnt" : 0, "words" : {}}
-            record_words = get_words_from_record(record)
-            for word in record_words:
-                # stemming, removing pactuations and coverting to lower case
-                clean_word = ps.stem(word.translate(str.maketrans('', '', string.punctuation)).lower())  
-                if clean_word not in set(stopwords.words('english')):
-                    update_words_dict(clean_word, record_num)               
-                    records_dict[record_num]["words_cnt"] += 1
-                    max_freq = max(max_freq, words_dict[clean_word]["docs"][record_num]["word_cnt"])
-            calc_tf_values(record_num, max_freq)
+        if file[-3:]=="xml" and file[-5]!="y":
+            doc = ET.parse(dir_path+"/"+file)
+            root = doc.getroot()
+            records = root.findall("RECORD")
+            for record in records:
+                max_freq = 0
+                record_num = record.find("RECORDNUM").text.strip().lstrip('0')
+                records_dict[record_num] = {"words_cnt" : 0, "words" : {}}
+                record_words = get_words_from_record(record)
+                for word in record_words:
+                    # stemming, removing pactuations and coverting to lower case
+                    for punc in string.punctuation:
+                        word = word.replace(punc, '')
+                    clean_word = ps.stem(word.lower())  
+                    if clean_word not in set(stopwords.words('english')):
+                        update_words_dict(clean_word, record_num)               
+                        records_dict[record_num]["words_cnt"] += 1
+                        max_freq = max(max_freq, words_dict[clean_word]["docs"][record_num]["word_cnt"])
+                calc_tf_values(record_num, max_freq)
     calc_idf_values()
     calc_weight_values()
     save_index_dict_to_json()
@@ -74,7 +77,7 @@ def calc_idf_values():
     D = len(records_dict.keys())
     for word in words_dict.keys():
         df = len(words_dict[word]["docs"])
-        words_dict[word]["idf"] = math.log2(D / df)
+        words_dict[word]["idf"] = math.log(D / df, 2)
 
 def calc_weight_values():
     for record_num in records_dict.keys():
@@ -121,7 +124,7 @@ def parse_query(query):
             df = len(words_dict[clean_word]["docs"])
         else:
             df = 1
-        idf = math.log2(D / df)
+        idf = math.log(D / df, 2)
 
         # Calculate tf-idf
         query_dict["words"][clean_word] = tf * idf
