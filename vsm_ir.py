@@ -12,7 +12,8 @@ import xml.etree.ElementTree as ET
 
 JSON_FILE_NAME = "vsm_inverted_index.json"
 QUERY_RESULT_FILE_NAME = "ranked_query_docs.txt"
-SCORELIMIT = 0.08
+SCORELIMIT_TFIDF = 0.08
+SCORELIMIT_BM25 = 1.5
 BM25_K = 1.5
 BM25_B = 0.75
 records_dict = {}
@@ -143,7 +144,7 @@ def calc_tfidf_grades(query_dict):
     # Calculate cosine similarity between query and every record
     for record_num in records_dict.keys():
         cos_similarity = calc_cosine_similarity(query_dict, record_num)
-        if cos_similarity > SCORELIMIT:
+        if cos_similarity > SCORELIMIT_TFIDF:
             relevant_records[record_num] = cos_similarity
 
     # Sorting by cosine similarity descending
@@ -183,7 +184,7 @@ def calc_bm25_grades(query_dict):
     for record_num in records_dict.keys():
         D = records_dict[record_num]["words_cnt"]
         bm25_grade = calc_bm25_grade_for_record(N, D, avgdl, query_dict, record_num)
-        if bm25_grade > SCORELIMIT:
+        if bm25_grade > SCORELIMIT_BM25:
             relevant_records[record_num] = bm25_grade
 
     sorted_records = sorted(relevant_records.items(), key=lambda x: x[1], reverse=True)
