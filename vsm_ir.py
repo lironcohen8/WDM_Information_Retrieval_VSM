@@ -9,7 +9,6 @@ nltk.download("stopwords")
 from nltk.stem import PorterStemmer
 ps = PorterStemmer()
 import xml.etree.ElementTree as ET
-# from pathlib import Path
 
 JSON_FILE_NAME = "vsm_inverted_index.json"
 QUERY_RESULT_FILE_NAME = "ranked_query_docs.txt"
@@ -107,7 +106,9 @@ def parse_query(query):
     query_words = query.strip().split()
     for word in query_words:
         # stemming, removing pactuations and coverting to lower case
-        clean_word = ps.stem(word.translate(str.maketrans('', '', string.punctuation)).lower())  
+        for punc in string.punctuation:
+            word = word.replace(punc, '')
+        clean_word = ps.stem(word.lower())  
         if clean_word not in set(stopwords.words('english')):
             if clean_word not in query_dict["words"].keys():
                 query_dict["words"][clean_word] = 0
@@ -154,7 +155,7 @@ def calc_cosine_similarity(query_dict, record_num):
     denom_query_sqrd = 0
     denom_record_sqrd = 0
 
-    common_words = query_dict["words"].keys() & records_dict[record_num]["words"].keys()
+    common_words = set(query_dict["words"].keys()).intersection(records_dict[record_num]["words"].keys())
     if len(common_words) > 0:
         for word in common_words:
             query_weight = query_dict["words"][word]
@@ -191,7 +192,7 @@ def calc_bm25_grades(query_dict):
 def calc_bm25_grade_for_record(N, D, avgdl, query_dict, record_num):
     bm25_grade = 0
     right_denom = BM25_K * (1 - BM25_B + (BM25_B * D / avgdl))
-    common_words = query_dict["words"].keys() & records_dict[record_num]["words"].keys()
+    common_words =  set(query_dict["words"].keys()).intersection(records_dict[record_num]["words"].keys())
     if len(common_words) > 0:
         for word in common_words:
             n = len(words_dict[word]["docs"].keys())
@@ -205,8 +206,7 @@ def save_query_result_to_txt(sorted_records):
     sorted_records_num_list = [record[0] for record in sorted_records]
     with open(QUERY_RESULT_FILE_NAME, 'w') as f:
         for record_num in sorted_records_num_list:
-            f.write(record_num + "\n")  # TODO shuld work - check in nova
-        #f.write((os.linesep).join(sorted_records_num_list))
+            f.write(record_num + "\n")
 
 if __name__ == '__main__':
     if sys.argv[1] == "create_index":
