@@ -26,7 +26,6 @@ except:
 
 def create_index(dir_path):
     files = os.listdir(dir_path)
-    
     for file in files:
         if file[-3:]=="xml" and file[-5]!="y":
             doc = ET.parse(dir_path+"/"+file)
