@@ -18,14 +18,15 @@ BM25_B = 0.75
 STOPWORDS = {}
 records_dict = {}
 words_dict = {}
+try:
+    STOPWORDS = set(stopwords.words('english'))
+except:
+    nltk.download("stopwords")
+    STOPWORDS = set(stopwords.words('english'))
 
 def create_index(dir_path):
     files = os.listdir(dir_path)
-    try:
-        STOPWORDS = set(stopwords.words('english'))
-    except:
-        nltk.download("stopwords")
-        STOPWORDS = set(stopwords.words('english'))
+    
     for file in files:
         if file[-3:]=="xml" and file[-5]!="y":
             doc = ET.parse(dir_path+"/"+file)
