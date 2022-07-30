@@ -5,7 +5,6 @@ import string
 import math
 import nltk
 from nltk.corpus import stopwords
-nltk.download("stopwords")
 from nltk.stem import PorterStemmer
 ps = PorterStemmer()
 import xml.etree.ElementTree as ET
@@ -16,11 +15,17 @@ SCORELIMIT_TFIDF = 0.08
 SCORELIMIT_BM25 = 7
 BM25_K = 1.5
 BM25_B = 0.75
+STOPWORDS = {}
 records_dict = {}
 words_dict = {}
 
 def create_index(dir_path):
     files = os.listdir(dir_path)
+    try:
+        STOPWORDS = set(stopwords.words('english'))
+    except:
+        nltk.download("stopwords")
+        STOPWORDS = set(stopwords.words('english'))
     for file in files:
         if file[-3:]=="xml" and file[-5]!="y":
             doc = ET.parse(dir_path+"/"+file)
@@ -36,7 +41,7 @@ def create_index(dir_path):
                     for punc in string.punctuation:
                         word = word.replace(punc, '')
                     clean_word = ps.stem(word.lower())  
-                    if clean_word not in set(stopwords.words('english')):
+                    if clean_word not in STOPWORDS:
                         update_words_dict(clean_word, record_num)               
                         records_dict[record_num]["words_cnt"] += 1
                         max_freq = max(max_freq, words_dict[clean_word]["docs"][record_num]["word_cnt"])
@@ -110,7 +115,7 @@ def parse_query(query):
         for punc in string.punctuation:
             word = word.replace(punc, '')
         clean_word = ps.stem(word.lower())  
-        if clean_word not in set(stopwords.words('english')):
+        if clean_word not in STOPWORDS:
             if clean_word not in query_dict["words"].keys():
                 query_dict["words"][clean_word] = 0
             query_dict["words"][clean_word] += 1

@@ -1,0 +1,998 @@
+{
+    "Average Cumulative Gain": 0.49544922169550865,
+    "Average Recall": 0.31862620787540935,
+    "Average Precision": 0.33361476751396085,
+    "Average F Score": 0.2591666723166251,
+    "Queries": [
+        {
+            "num": "00099",
+            "text": "Are there abnormalities of taste in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.981922901635273,
+                "recall": 0.6000000799999841,
+                "precision": 1.0,
+                "F": 0.7500000624999844
+            }
+        },
+        {
+            "num": "00071",
+            "text": "What is the prognosis for infants with wheezing and cystic fibrosis?",
+            "evaluation": {
+                "cumulative_gain": 0.5680953497849341,
+                "recall": 0.5000000833333195,
+                "precision": 0.6000000799999841,
+                "F": 0.5454546280991587
+            }
+        },
+        {
+            "num": "00011",
+            "text": "What is the difference between meconium ileus and meconium plug syndrome?",
+            "evaluation": {
+                "cumulative_gain": 0.8589148402831145,
+                "recall": 0.6363636528925612,
+                "precision": 0.46666668444444387,
+                "F": 0.5384615562130171
+            }
+        },
+        {
+            "num": "00018",
+            "text": "Is dietary supplementation with bile salts of therapeutic benefit to CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.5641043078367781,
+                "recall": 0.6666666825396818,
+                "precision": 0.42424244168962305,
+                "F": 0.5185185363511654
+            }
+        },
+        {
+            "num": "00037",
+            "text": "What techniques are available for screening of newborn infants for CF, and what factors contribute to erroneous results of these tests?",
+            "evaluation": {
+                "cumulative_gain": 0.7608154105454951,
+                "recall": 0.5306122496876301,
+                "precision": 0.4905660425418298,
+                "F": 0.5098039263744714
+            }
+        },
+        {
+            "num": "00052",
+            "text": "What is known about prolactin in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.8888887901234679,
+                "recall": 0.5000002499998749,
+                "precision": 0.5000002499998749,
+                "F": 0.5000002499998749
+            }
+        },
+        {
+            "num": "00057",
+            "text": "What is the pathophysiologic role of circulating antibodies to Pseudomonas aeruginosa in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.5478998452065904,
+                "recall": 0.6470588304498268,
+                "precision": 0.4024390316775728,
+                "F": 0.49624060907908857
+            }
+        },
+        {
+            "num": "00010",
+            "text": "What is the role of Vitamin E in the therapy of patients with CF?",
+            "evaluation": {
+                "cumulative_gain": 0.808517747063828,
+                "recall": 0.5200000191999993,
+                "precision": 0.4482758810939352,
+                "F": 0.48148150068587037
+            }
+        },
+        {
+            "num": "00020",
+            "text": "What is the effect of treatment of CF patients with essential fatty acid supplements?",
+            "evaluation": {
+                "cumulative_gain": 0.8161717312171178,
+                "recall": 0.5434782707939507,
+                "precision": 0.42372882332663014,
+                "F": 0.47619048616780035
+            }
+        },
+        {
+            "num": "00049",
+            "text": "Is RNA methylation or polyamine metabolism normal in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.7555969415830477,
+                "recall": 0.3888889058641971,
+                "precision": 0.5000000178571422,
+                "F": 0.43750001757812446
+            }
+        },
+        {
+            "num": "00054",
+            "text": "What is the relationship of allergy or hypersensitivity to lung disease in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.7004945817897997,
+                "recall": 0.3225806560874088,
+                "precision": 0.5882353062283734,
+                "F": 0.41666667881944425
+            }
+        },
+        {
+            "num": "00033",
+            "text": "What conditions or factors lead to erroneous sweat tests?",
+            "evaluation": {
+                "cumulative_gain": 0.6466151022251375,
+                "recall": 0.31578948568790377,
+                "precision": 0.6000000133333329,
+                "F": 0.4137931169242962
+            }
+        },
+        {
+            "num": "00072",
+            "text": "What is the best treatment for nasal polyps in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.5124444663719091,
+                "recall": 0.5384615739644943,
+                "precision": 0.33333336507936356,
+                "F": 0.411764740484427
+            }
+        },
+        {
+            "num": "00069",
+            "text": "What is the best way to treat pneumothorax in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.8906205002466577,
+                "recall": 0.2666667155555523,
+                "precision": 0.800000039999992,
+                "F": 0.400000059999994
+            }
+        },
+        {
+            "num": "00067",
+            "text": "What is the prognosis for patients who have had an episode of respiratory failure?",
+            "evaluation": {
+                "cumulative_gain": 0.5876344294514991,
+                "recall": 0.4285714693877522,
+                "precision": 0.3529412145328697,
+                "F": 0.3870968137356894
+            }
+        },
+        {
+            "num": "00026",
+            "text": "What is the heterozygote advantage in CF?",
+            "evaluation": {
+                "cumulative_gain": 0.6675377476281904,
+                "recall": 0.24242426538108292,
+                "precision": 0.8888889012345668,
+                "F": 0.38095241043083766
+            }
+        },
+        {
+            "num": "00073",
+            "text": "How effective is bronchial lavage in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.7116387188768076,
+                "recall": 0.4444444753086403,
+                "precision": 0.33333336111111,
+                "F": 0.3809524104308376
+            }
+        },
+        {
+            "num": "00048",
+            "text": "Do fibroblasts from CF patients grow at a normal rate?",
+            "evaluation": {
+                "cumulative_gain": 0.2834317384270366,
+                "recall": 0.40000001999999935,
+                "precision": 0.3529411955017296,
+                "F": 0.3750000195312494
+            }
+        },
+        {
+            "num": "00075",
+            "text": "What is the best treatment for pulmonary hypertension and/or cor pulmonale in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.5332458672086514,
+                "recall": 0.4761905011337857,
+                "precision": 0.3030303241505963,
+                "F": 0.3703703936899854
+            }
+        },
+        {
+            "num": "00090",
+            "text": "What factors are responsible for the appearance of mucoid strains of Pseudomonas aeruginosa in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.858921437491012,
+                "recall": 0.8214285778061222,
+                "precision": 0.2346938853602665,
+                "F": 0.36507937515747024
+            }
+        },
+        {
+            "num": "00053",
+            "text": "Does secretory IgA protect CF patients against bacterial colonization or infection?",
+            "evaluation": {
+                "cumulative_gain": 0.4927320220837069,
+                "recall": 0.5217391512287326,
+                "precision": 0.27906978420767947,
+                "F": 0.36363638292010964
+            }
+        },
+        {
+            "num": "00051",
+            "text": "What circulating or secreted \"factors\" have been described in CF patients? (\"Factors\" are unidentified biologically active molecules thought to play some pathogenetic role in cystic fibrosis).",
+            "evaluation": {
+                "cumulative_gain": 0.4457392022323622,
+                "recall": 0.26970954659871554,
+                "precision": 0.5158730197152935,
+                "F": 0.3542234367617252
+            }
+        },
+        {
+            "num": "00045",
+            "text": "What abnormalities of prostaglandin metabolism have been described in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.593787690762457,
+                "recall": 0.4500000274999987,
+                "precision": 0.28125002246093683,
+                "F": 0.34615387130177416
+            }
+        },
+        {
+            "num": "00070",
+            "text": "What is the treatment for and prognosis of hemoptysis in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.6412599400691298,
+                "recall": 0.29411768858131243,
+                "precision": 0.41666671527777377,
+                "F": 0.3448276313911978
+            }
+        },
+        {
+            "num": "00094",
+            "text": "What animal models are available which are relevant to CF?",
+            "evaluation": {
+                "cumulative_gain": 0.5911015655081671,
+                "recall": 0.23255815738236846,
+                "precision": 0.6666666888888875,
+                "F": 0.344827608799048
+            }
+        },
+        {
+            "num": "00058",
+            "text": "What is the immunologic response to pulmonary infection in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.4844819504782718,
+                "recall": 0.24210527113573402,
+                "precision": 0.5750000106249998,
+                "F": 0.34074075050754454
+            }
+        },
+        {
+            "num": "00061",
+            "text": "Is there a defect in mucociliary transport (clearance) in the respiratory tract of CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.7515012361709813,
+                "recall": 0.3428571522448979,
+                "precision": 0.3380281783376313,
+                "F": 0.34042554127055974
+            }
+        },
+        {
+            "num": "00100",
+            "text": "What is the incidence of and treatment for hypertrophic osteoarthropathy in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.754601536775348,
+                "recall": 0.27272733884296924,
+                "precision": 0.42857151020406997,
+                "F": 0.3333334074073992
+            }
+        },
+        {
+            "num": "00001",
+            "text": "What are the effects of calcium on the physical properties of mucus from CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.49175383030038444,
+                "recall": 0.4117647231833906,
+                "precision": 0.27450981814686637,
+                "F": 0.32941178048442876
+            }
+        },
+        {
+            "num": "00025",
+            "text": "What evidence is there that the genetic basis for CF involves more than one gene?",
+            "evaluation": {
+                "cumulative_gain": 0.4695681140413394,
+                "recall": 0.3137255036524411,
+                "precision": 0.3404255459483927,
+                "F": 0.32653062598917093
+            }
+        },
+        {
+            "num": "00044",
+            "text": "What structural or enzymatic differences are there between fibroblasts from CF patients and non-CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.5375895708016991,
+                "recall": 0.21428571989795916,
+                "precision": 0.6818181890495867,
+                "F": 0.32608696384688085
+            }
+        },
+        {
+            "num": "00086",
+            "text": "What is the role of bacteria other than Pseudomonas aeruginosa, Staphylococcus aureus, or Haemophilus influenzae in the pathogenesis of lung disease in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.3660562503601332,
+                "recall": 0.5319149035762787,
+                "precision": 0.2252252322051781,
+                "F": 0.3164557048549911
+            }
+        },
+        {
+            "num": "00080",
+            "text": "What is the evidence that combination therapy with aminoglycosides and semisynthetic penicillins is more effective than therapy with either alone?",
+            "evaluation": {
+                "cumulative_gain": 0.5150585299336282,
+                "recall": 0.26470590397923816,
+                "precision": 0.3750000260416656,
+                "F": 0.3103448513674189
+            }
+        },
+        {
+            "num": "00034",
+            "text": "What alternative techniques other than the classical Gibson-Cooke quantitative pilocarpine iontophoresis test (with titrimetric analysis of chloride) are available for sweat testing; what are their relative advantages and disadvantages?",
+            "evaluation": {
+                "cumulative_gain": 0.6806097955727299,
+                "recall": 0.5641025752794212,
+                "precision": 0.21359224064473553,
+                "F": 0.3098591646498709
+            }
+        },
+        {
+            "num": "00083",
+            "text": "What is the role of bacterial phagocytosis (by alveolar macrophages or polymorphonuclear leukocytes) in lung disease in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.6466080290769487,
+                "recall": 0.3437500205078119,
+                "precision": 0.255813970795024,
+                "F": 0.29333335217777734
+            }
+        },
+        {
+            "num": "00078",
+            "text": "What special considerations are there for treatment of CF patients with antibiotics (ie, are the pharmacodynamics of antibiotics different in CF patients, or are there other special problems peculiar to CF)?",
+            "evaluation": {
+                "cumulative_gain": 0.24549045515364243,
+                "recall": 0.2597402693540225,
+                "precision": 0.3333333444444443,
+                "F": 0.2919708132559006
+            }
+        },
+        {
+            "num": "00079",
+            "text": "What is the role of orally administered antibiotics in the treatment of CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.36984261930605944,
+                "recall": 0.27906978420767947,
+                "precision": 0.29268294408090384,
+                "F": 0.2857143027210881
+            }
+        },
+        {
+            "num": "00084",
+            "text": "What is the relationship between Haemophilus influenzae and Pseudomonas aeruginosa in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.6503352265508222,
+                "recall": 0.7500000156249991,
+                "precision": 0.16901409621106908,
+                "F": 0.27586208561236586
+            }
+        },
+        {
+            "num": "00014",
+            "text": "What non-invasive tests can be performed for the evaluation of exocrine pancreatic function in patients with CF?",
+            "evaluation": {
+                "cumulative_gain": 0.48001409569388476,
+                "recall": 0.3636363752066114,
+                "precision": 0.21505377188114225,
+                "F": 0.2702702801314827
+            }
+        },
+        {
+            "num": "00089",
+            "text": "What is the epidemiology of Pseudomonas aeruginosa in CF patients? Specifically, do CF patients spread Pseudomonas aeruginosa to other patients or to other individuals (family)?",
+            "evaluation": {
+                "cumulative_gain": 0.7172922012102716,
+                "recall": 0.7647058961937708,
+                "precision": 0.16049383752476745,
+                "F": 0.2653061374427319
+            }
+        },
+        {
+            "num": "00031",
+            "text": "What are the major psychological or social effects of CF on patients and their families?",
+            "evaluation": {
+                "cumulative_gain": 0.5829420767299982,
+                "recall": 0.18965518638525544,
+                "precision": 0.44000002239999914,
+                "F": 0.26506025867324684
+            }
+        },
+        {
+            "num": "00041",
+            "text": "Is Vitamin D metabolism normal in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.6934170699683001,
+                "recall": 0.40000003999999734,
+                "precision": 0.19354841311134152,
+                "F": 0.26086959735349574
+            }
+        },
+        {
+            "num": "00030",
+            "text": "What are the results of genetic counseling of families of children with CF?",
+            "evaluation": {
+                "cumulative_gain": 0.5527136891054735,
+                "recall": 0.411764740484427,
+                "precision": 0.1891892111029943,
+                "F": 0.2592592866941005
+            }
+        },
+        {
+            "num": "00042",
+            "text": "What abnormalities of insulin secretion or insulin metabolism occur in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.6105318550937675,
+                "recall": 0.234042569488456,
+                "precision": 0.2750000181249996,
+                "F": 0.25287358039371083
+            }
+        },
+        {
+            "num": "00040",
+            "text": "Other than the sweat test, what techniques may be useful (beyond the neonatal period) for the diagnosis of CF?",
+            "evaluation": {
+                "cumulative_gain": 0.42481318729654277,
+                "recall": 0.2123287725182961,
+                "precision": 0.2924528368636525,
+                "F": 0.24603175201562102
+            }
+        },
+        {
+            "num": "00082",
+            "text": "What is the role of aerosols in the treatment of lung disease in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.5625304658092635,
+                "recall": 0.20967743210197692,
+                "precision": 0.2954545614669418,
+                "F": 0.24528303310786737
+            }
+        },
+        {
+            "num": "00064",
+            "text": "How does lung function change with time in CF patients? (time periods greater than a day)",
+            "evaluation": {
+                "cumulative_gain": 0.42225407780543517,
+                "recall": 0.3400000131999998,
+                "precision": 0.18888889790123448,
+                "F": 0.24285715367346924
+            }
+        },
+        {
+            "num": "00021",
+            "text": "Does pancreatic insufficiency in CF patients affect their ability to absorb or metabolize iron?",
+            "evaluation": {
+                "cumulative_gain": 0.7701309318047161,
+                "recall": 0.4800000207999992,
+                "precision": 0.15789474792243754,
+                "F": 0.2376237774727965
+            }
+        },
+        {
+            "num": "00009",
+            "text": "What is the association between liver disease (cirrhosis) and vitamin A metabolism in CF?",
+            "evaluation": {
+                "cumulative_gain": 0.4114871421183849,
+                "recall": 0.7000000299999971,
+                "precision": 0.14000001719999966,
+                "F": 0.23333335888888806
+            }
+        },
+        {
+            "num": "00050",
+            "text": "What defects in the synthesis or metabolism of cyclic nucleotides have been described in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.6815333911505825,
+                "recall": 0.3200000271999989,
+                "precision": 0.18181820041322275,
+                "F": 0.23188408023524407
+            }
+        },
+        {
+            "num": "00081",
+            "text": "How effective are inhalations of mucolytic agents in the treatment of CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.6111643711285828,
+                "recall": 0.21428574234693776,
+                "precision": 0.2500000312499987,
+                "F": 0.23076926035502843
+            }
+        },
+        {
+            "num": "00046",
+            "text": "What are the properties and activity of galactosyltransferase enzymes from CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.5723151739357415,
+                "recall": 0.3333333703703683,
+                "precision": 0.17142859510204014,
+                "F": 0.22641512353150475
+            }
+        },
+        {
+            "num": "00016",
+            "text": "What are the gastrointestinal complications of CF after the neonatal period (exclude liver disease and meconium ileus)?",
+            "evaluation": {
+                "cumulative_gain": 0.35853191019358455,
+                "recall": 0.16111111577160492,
+                "precision": 0.36708861560647327,
+                "F": 0.22393822993097892
+            }
+        },
+        {
+            "num": "00074",
+            "text": "What are the results of mechanical ventilation in CF patients with respiratory failure?",
+            "evaluation": {
+                "cumulative_gain": 0.8011804126138866,
+                "recall": 0.42857151020406997,
+                "precision": 0.15000004249999788,
+                "F": 0.22222227983538673
+            }
+        },
+        {
+            "num": "00004",
+            "text": "What is the lipid composition of CF respiratory secretions?",
+            "evaluation": {
+                "cumulative_gain": 0.6614696277365131,
+                "recall": 0.4444445061728327,
+                "precision": 0.14814817969821556,
+                "F": 0.22222226543209636
+            }
+        },
+        {
+            "num": "00056",
+            "text": "What is the relationship between nutrition and pulmonary host defenses against bacterial infection in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.2547542505395066,
+                "recall": 0.25000002343749933,
+                "precision": 0.19047620975056648,
+                "F": 0.2162162373995612
+            }
+        },
+        {
+            "num": "00097",
+            "text": "Is oxygen transport by red blood cells abnormal in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.5532682136697306,
+                "recall": 0.7272727520661136,
+                "precision": 0.1250000136718748,
+                "F": 0.21333335431111058
+            }
+        },
+        {
+            "num": "00036",
+            "text": "What is the concentration of potassium in sweat from CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.3143702420053276,
+                "recall": 0.3333334074073992,
+                "precision": 0.15000004249999788,
+                "F": 0.2068966064209237
+            }
+        },
+        {
+            "num": "00043",
+            "text": "Is salt (sodium and/or chloride) transport/permeability abnormal in CF?",
+            "evaluation": {
+                "cumulative_gain": 0.10564288732424192,
+                "recall": 0.13265307007496868,
+                "precision": 0.4482758810939352,
+                "F": 0.20472442197284377
+            }
+        },
+        {
+            "num": "00066",
+            "text": "What are the pathologic features of lung disease in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.19699606506548661,
+                "recall": 0.14285715646258484,
+                "precision": 0.360000025599999,
+                "F": 0.20454547262396658
+            }
+        },
+        {
+            "num": "00019",
+            "text": "What complications of pancreatic enzyme therapy have been reported in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.21847577750790012,
+                "recall": 0.409090935950412,
+                "precision": 0.1343283711294273,
+                "F": 0.20224720893826498
+            }
+        },
+        {
+            "num": "00076",
+            "text": "What are the effects of exercise training programs on lung function in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.7430150823432694,
+                "recall": 0.3529412145328697,
+                "precision": 0.1363636559917351,
+                "F": 0.19672133781241516
+            }
+        },
+        {
+            "num": "00068",
+            "text": "What are the effects of bronchodilators in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.6058013290740039,
+                "recall": 0.1111111308641971,
+                "precision": 0.8333333611111065,
+                "F": 0.19607846289888384
+            }
+        },
+        {
+            "num": "00006",
+            "text": "What is the effect of water or other therapeutic agents on the physical properties (viscosity, elasticity) of sputum or bronchial secretions from CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.5825971926520896,
+                "recall": 0.5416666857638881,
+                "precision": 0.11926606312599944,
+                "F": 0.1954887339024251
+            }
+        },
+        {
+            "num": "00003",
+            "text": "How are salivary glycoproteins from CF patients different from those of normal subjects?",
+            "evaluation": {
+                "cumulative_gain": 0.31438686810536676,
+                "recall": 0.23255815738236846,
+                "precision": 0.1587301720836481,
+                "F": 0.18867926059095738
+            }
+        },
+        {
+            "num": "00096",
+            "text": "Is there an increased incidence of dental problems (eg, caries or periodontal disease) in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.6791554083035715,
+                "recall": 0.3333333888888843,
+                "precision": 0.12500002734374915,
+                "F": 0.1818182190082628
+            }
+        },
+        {
+            "num": "00017",
+            "text": "What is the most effective regimen for the use of pancreatic enzyme supplements in the treatment of CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.38326209446808557,
+                "recall": 0.23636365024793365,
+                "precision": 0.14606742532508513,
+                "F": 0.18055556693672825
+            }
+        },
+        {
+            "num": "00029",
+            "text": "What is the pathology of the reproductive system (male or female) in CF?",
+            "evaluation": {
+                "cumulative_gain": 0.20920291912085823,
+                "recall": 0.1363636559917351,
+                "precision": 0.2500000312499987,
+                "F": 0.17647061245674672
+            }
+        },
+        {
+            "num": "00038",
+            "text": "Can CF be diagnosed prenatally?",
+            "evaluation": {
+                "cumulative_gain": 0.7768877089807779,
+                "recall": 0.09433963972944076,
+                "precision": 1.0,
+                "F": 0.17241382164090271
+            }
+        },
+        {
+            "num": "00065",
+            "text": "What are the abnormalities of pulmonary function in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.30177732302925503,
+                "recall": 0.10638298822996822,
+                "precision": 0.4545454793388419,
+                "F": 0.17241380737217576
+            }
+        },
+        {
+            "num": "00088",
+            "text": "What is the role of viral infection in the lung disease of CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.7001645137150699,
+                "recall": 0.28571433673469027,
+                "precision": 0.12121214784205614,
+                "F": 0.1702128012675404
+            }
+        },
+        {
+            "num": "00028",
+            "text": "What is the incidence of male fertility in CF?",
+            "evaluation": {
+                "cumulative_gain": 0.441109705707163,
+                "recall": 0.09803923337177975,
+                "precision": 0.5555556049382662,
+                "F": 0.16666669444444351
+            }
+        },
+        {
+            "num": "00063",
+            "text": "What are the biochemical or microscopic characteristics of airway inflammation in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.19908697556684665,
+                "recall": 0.1282051505588423,
+                "precision": 0.2380952743764155,
+                "F": 0.16666669444444351
+            }
+        },
+        {
+            "num": "00022",
+            "text": "What is the frequency of CF in non-Caucasian populations?",
+            "evaluation": {
+                "cumulative_gain": 0.19635110388280844,
+                "recall": 0.10000001285714268,
+                "precision": 0.4666667022222199,
+                "F": 0.16470590200691995
+            }
+        },
+        {
+            "num": "00091",
+            "text": "What are the unusual manifestations of CF (other than lung disease or exocrine pancreatic insufficiency)?",
+            "evaluation": {
+                "cumulative_gain": 0.17213217935386793,
+                "recall": 0.10197368716456025,
+                "precision": 0.4133333411555555,
+                "F": 0.16358839491510083
+            }
+        },
+        {
+            "num": "00032",
+            "text": "What factors influence compliance with prescribed therapy in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.5195981024737285,
+                "recall": 0.13333336222222125,
+                "precision": 0.21052635734071803,
+                "F": 0.1632653402748841
+            }
+        },
+        {
+            "num": "00007",
+            "text": "Are mucus glycoproteins degraded differently in CF patients as compared to those from normal subjects?",
+            "evaluation": {
+                "cumulative_gain": 0.4427321115082676,
+                "recall": 0.35714288010204004,
+                "precision": 0.10526316731301931,
+                "F": 0.1626016396324937
+            }
+        },
+        {
+            "num": "00047",
+            "text": "What differences between normal subjects and CF patients have been described in the function or metabolism of hormones?",
+            "evaluation": {
+                "cumulative_gain": 0.3049419136670459,
+                "recall": 0.20000001333333314,
+                "precision": 0.13186814140804243,
+                "F": 0.15894040849085556
+            }
+        },
+        {
+            "num": "00077",
+            "text": "What techniques are effective in promoting clearance of mucus from the lungs of CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.25591521258942873,
+                "recall": 0.12195123022010697,
+                "precision": 0.2040816488962929,
+                "F": 0.15267176866149973
+            }
+        },
+        {
+            "num": "00085",
+            "text": "Do CF patients ever develop infection in organs other than the lung? If so, in what organs?",
+            "evaluation": {
+                "cumulative_gain": 0.12820892408322818,
+                "recall": 0.16129034963579517,
+                "precision": 0.1428571673469381,
+                "F": 0.15151517722681285
+            }
+        },
+        {
+            "num": "00062",
+            "text": "What are the clinical features of lung disease in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.16307433373995267,
+                "recall": 0.08333333969907404,
+                "precision": 0.40000001999999935,
+                "F": 0.1379310443915972
+            }
+        },
+        {
+            "num": "00095",
+            "text": "What abnormalities of skeletal muscle function or structure have been found in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.6850917908531852,
+                "recall": 0.3333334074073992,
+                "precision": 0.08571431183673396,
+                "F": 0.13636367561983295
+            }
+        },
+        {
+            "num": "00027",
+            "text": "What is the concordance of clinical or biochemical manifestations of CF in sibling pairs (both of whom have CF)?",
+            "evaluation": {
+                "cumulative_gain": 0.6895321990504251,
+                "recall": 0.18181825619834038,
+                "precision": 0.10526320498614711,
+                "F": 0.13333339111110726
+            }
+        },
+        {
+            "num": "00013",
+            "text": "What are the clinical or biochemical features of pancreatitis in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.17491795630796877,
+                "recall": 0.12500003645833183,
+                "precision": 0.13636367561983292,
+                "F": 0.13043482041587737
+            }
+        },
+        {
+            "num": "00087",
+            "text": "What is the role of fungi in the pathogenesis of lung disease in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.0752856445289038,
+                "recall": 0.10526318144044261,
+                "precision": 0.16666670138888745,
+                "F": 0.12903228616024887
+            }
+        },
+        {
+            "num": "00005",
+            "text": "Is CF mucus abnormal?",
+            "evaluation": {
+                "cumulative_gain": 0.35601049281538233,
+                "recall": 0.06870229718547866,
+                "precision": 0.7500000208333317,
+                "F": 0.1258741380996624
+            }
+        },
+        {
+            "num": "00055",
+            "text": "What are the interactions between proteases (endogenous or bacterial origin) and antiproteases in the lungs of CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.056526801713677244,
+                "recall": 0.12500003645833183,
+                "precision": 0.12500003645833183,
+                "F": 0.12500003645833183
+            }
+        },
+        {
+            "num": "00015",
+            "text": "What are the hepatic complications or manifestations of CF?",
+            "evaluation": {
+                "cumulative_gain": 0.5417384177808507,
+                "recall": 0.06730770127588749,
+                "precision": 0.7000000299999971,
+                "F": 0.12280703293320996
+            }
+        },
+        {
+            "num": "00092",
+            "text": "What is the prognosis for survival of patients with CF?",
+            "evaluation": {
+                "cumulative_gain": 0.3603798483301552,
+                "recall": 0.06722689859473195,
+                "precision": 0.6666666944444423,
+                "F": 0.12213741798263485
+            }
+        },
+        {
+            "num": "00098",
+            "text": "What are the effects of CF on the development and/or function of the brain and central nervous system?",
+            "evaluation": {
+                "cumulative_gain": 0.2425273551379753,
+                "recall": 0.2000000533333298,
+                "precision": 0.07894739265927915,
+                "F": 0.11320758063367621
+            }
+        },
+        {
+            "num": "00035",
+            "text": "Has any CF patient been found to have consistently normal sweat tests?",
+            "evaluation": {
+                "cumulative_gain": 0.41424147993454663,
+                "recall": 0.5000000357142832,
+                "precision": 0.0630630715039363,
+                "F": 0.11200001420799977
+            }
+        },
+        {
+            "num": "00008",
+            "text": "What histochemical differences have been described between normal and CF respiratory epithelia?",
+            "evaluation": {
+                "cumulative_gain": 0.10201780418301043,
+                "recall": 0.09090913223140308,
+                "precision": 0.13333339111110729,
+                "F": 0.10810815631847803
+            }
+        },
+        {
+            "num": "00060",
+            "text": "What are the effects of CF on the pulmonary circulation?",
+            "evaluation": {
+                "cumulative_gain": 0.5897204709326517,
+                "recall": 0.0588235570934248,
+                "precision": 0.40000011999997603,
+                "F": 0.10256414858645393
+            }
+        },
+        {
+            "num": "00012",
+            "text": "What abnormalities of amino acid transport have been described in the small bowel of CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.583364667096464,
+                "recall": 0.5714286326530524,
+                "precision": 0.055555568672839326,
+                "F": 0.10126584553757353
+            }
+        },
+        {
+            "num": "00039",
+            "text": "How may heterozygotes for CF be identified?",
+            "evaluation": {
+                "cumulative_gain": 0.2364278673976254,
+                "recall": 0.04320988244932172,
+                "precision": 0.7777778024691331,
+                "F": 0.0818713557675865
+            }
+        },
+        {
+            "num": "00023",
+            "text": "What congenital or hereditary diseases or conditions have been found in association with CF?",
+            "evaluation": {
+                "cumulative_gain": 0.039388678465657176,
+                "recall": 0.057142884081631894,
+                "precision": 0.09090913223140308,
+                "F": 0.07017547122191331
+            }
+        },
+        {
+            "num": "00002",
+            "text": "Can one distinguish between the effects of mucus hypersecretion and infection on the submucosal glands of the respiratory tract in CF?",
+            "evaluation": {
+                "cumulative_gain": 0.3190222779318771,
+                "recall": 0.42857151020406997,
+                "precision": 0.031578957562326766,
+                "F": 0.05882354786620495
+            }
+        },
+        {
+            "num": "00024",
+            "text": "What are the characteristics of patients in whom CF is incompletely manifested?",
+            "evaluation": {
+                "cumulative_gain": 0.08407915269576746,
+                "recall": 0.03225809573360981,
+                "precision": 0.14285726530610493,
+                "F": 0.05263162880886163
+            }
+        },
+        {
+            "num": "00059",
+            "text": "What immunologic abnormalities have been found in CF patients?",
+            "evaluation": {
+                "cumulative_gain": 0.15033990465327257,
+                "recall": 0.020689661926278195,
+                "precision": 0.3750000781249903,
+                "F": 0.03921569883378172
+            }
+        }
+    ]
+}
