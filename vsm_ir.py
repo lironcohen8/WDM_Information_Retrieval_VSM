@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 JSON_FILE_NAME = "vsm_inverted_index.json"
 QUERY_RESULT_FILE_NAME = "ranked_query_docs.txt"
 SCORELIMIT_TFIDF = 0.08
-SCORELIMIT_BM25 = 1.5
+SCORELIMIT_BM25 = 7
 BM25_K = 1.5
 BM25_B = 0.75
 records_dict = {}
@@ -198,7 +198,7 @@ def calc_bm25_grade_for_record(N, D, avgdl, query_dict, record_num):
         for word in common_words:
             n = len(words_dict[word]["docs"].keys())
             idf = math.log(1 + ((N - n + 0.5) / (n + 0.5)))
-            tf = words_dict[word]["docs"][record_num]["tf"]
+            tf = words_dict[word]["docs"][record_num]["word_cnt"]
             nomin = idf * tf * (BM25_K + 1)
             bm25_grade += (nomin / (tf + right_denom))
     return bm25_grade
